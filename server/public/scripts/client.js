@@ -1,4 +1,4 @@
-//#region ⬇ Document setup below:
+//#region ⬇⬇ Document setup below:
 console.log( 'Client Log: JavaScript loaded!' );
 $( document ).ready( onReady );
 function onReady() {
@@ -8,7 +8,7 @@ function onReady() {
   // ⬇ Event handlers below:
   $('#addJokeButton').on('click', clickedAddJoke);
 } // End onReady function. 
-//#endregion ⬆ Document setup above.
+//#endregion ⬆⬆ Document setup above.
 
 
 //#region ⬇⬇ GET/POST functions below: 
@@ -26,16 +26,15 @@ function renderDom() {
     // ⬇ Looping through the object to append DOM with: 
     for (let i = 0; i < res.length; i++) {
       $( '#targetOutput' ).append(`<li>
-        Whose Joke: ${jokes[i].whoseJoke}<br>
-        The Setup: ${jokes[i].jokeQuestion}<br>
-        Punchline: ${jokes[i].punchLine}
+        <label class="blackText">Whose Joke:</label> <label class="whiteText">${jokes[i].whoseJoke}</label><br>
+        <label class="blackText">The Setup:</label> <label class="whiteText">${jokes[i].jokeQuestion}</label><br>
+        <label class="blackText">Punchline:</label> <label class="whiteText">${jokes[i].punchLine}</label>
       </li><br>`); // End #targetOutput append to DOM. 
     } // End for loop. 
   }).catch( function ( err ) {
     console.log( 'ERROR: in GET /jokes renderDom(), error is:', err );
   }); // End Ajax GET .then & .catch.
 } // End renderDom function. 
-// ⬆ GET /jokes renderDom function above.
 
 // ⬇ POST /jokes clickedAddJoke function below: 
 function clickedAddJoke() {
@@ -63,5 +62,4 @@ function clickedAddJoke() {
   // ⬇ Emptying out inputs on click:
   $('.userInputs').val('');
 } // End clickedAddJoke function. 
-// ⬆ POST /jokes clickedAddJoke function above.
 //#endregion ⬆⬆ GET/POST Functions above. 

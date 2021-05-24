@@ -1,0 +1,28 @@
+body {
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1, h2, .blackText {
+  color: black;
+  font-size: 27px;
+  text-shadow: 1px 1px white;
+}
+
+.whiteText{
+  color: white;
+  font-size: 25px;
+  text-shadow: 2px 2px black;
+}
+
+#wrapper {
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}

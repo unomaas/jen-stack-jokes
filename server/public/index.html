@@ -5,19 +5,23 @@
     <title>JEN Stack Code Challenge</title>
     <script src="vendors/jquery.min.js" charset="utf-8"></script>
     <script src="scripts/client.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
-    <h1>JEN Stack Code Challenge</h1>
-    <input type='text' id='whoseJokeInput' placeholder='Joker?' class="userInputs" />
-    <input type='text' id='questionInput' placeholder="Setup?" class="userInputs" />
-    <input type='text' id='punchlineInput' placeholder='Punchline?' class="userInputs" />
-    <button id='addJokeButton'>Add Joke</button>
-    <h2>Jokes:</h2>
-    <div id='outputDiv'>
-      <!-- Jokes array will append below: -->
-      <ul id="targetOutput">
-        <!-- <li>Placeholder Text for Target Output</li> -->
-      </ul>
-    </div>
+    <div id="wrapper" style="background-image: url('./images/background.jpeg');">
+      <br><br>
+      <h1>JEN Stack Code Challenge</h1>
+      <input type='text' id='whoseJokeInput' placeholder='Joker?' class="userInputs" />
+      <input type='text' id='questionInput' placeholder="Setup?" class="userInputs" />
+      <input type='text' id='punchlineInput' placeholder='Punchline?' class="userInputs" />
+      <button id='addJokeButton'>Add Joke</button>
+      <h2>Jokes Displayed Below:</h2>
+      <div id='outputDiv'>
+        <!-- Jokes array will append below: -->
+        <ul id="targetOutput">
+          <!-- <li>Placeholder Text for Target Output</li> -->
+        </ul>
+      </div>
+  </div>
   </body>
 </html>

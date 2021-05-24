@@ -54,7 +54,6 @@ app.get('/jokes', ( req, res ) => {
   // ⬇ Sending jokes array in GET response: 
   res.send( jokes );
 }); // End GET /jokes. 
-// ⬆ GET /jokes function above.
 
 // ⬇ POST /jokes function below: 
 app.post('/jokes', ( req, res ) => {
@@ -64,7 +63,6 @@ app.post('/jokes', ( req, res ) => {
   // ⬇ sendStatus 'Created' below: 
   res.sendStatus( 201 );
 }); // End POST /jokes. 
-// ⬆ POST /jokes function above.
 //#endregion ⬆⬆ All GET/POST functions above. 
 
 
