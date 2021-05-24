@@ -50,7 +50,7 @@ let jokes = [
 
 //#region ⬇⬇ All GET/POST functions below: 
 // ⬇ GET /jokes renderDom function below: 
-app.get('/jokes', ( req, req ) => {
+app.get('/jokes', ( req, res ) => {
   console.log( 'Server Log: Got to /jokes GET' );
   // ⬇ Sending jokes array in GET response: 
   res.send( jokes );

@@ -22,11 +22,22 @@ function renderDom() {
   $.ajax({
     type: 'GET',
     url: '/jokes'
-  }).then( function ( response ) {
-    console.log('Client Log: in renderDom(), response is:', response);
-    
-  }).catch( function ( error ) {
-
+  }).then( function ( res ) {
+    console.log( 'Client Log: in renderDom(), response is:', res );
+    // ⬇ Declaring variables to be used from the response: 
+    let jokes = res;
+    // ⬇ Empty and append jokes array each time this runs: 
+    $( '#targetOutput' ).empty();
+    // ⬇ Looping through the object to append DOM with: 
+    for (let i = 0; i < res.length; i++) {
+      $( '#targetOutput' ).append(`<li>
+        Whose Joke: ${jokes[i].whoseJoke}<br>
+        The Setup: ${jokes[i].jokeQuestion}<br>
+        Punchline: ${jokes[i].punchLine}
+      </li><br>`); // End #targetOutput append to DOM. 
+    } // End for loop. 
+  }).catch( function ( err ) {
+    console.log( 'ERROR:in renderDom(), error is:', err );
   });
 } // End renderDom function. 
 // ⬆ GET /jokes renderDom function above.
