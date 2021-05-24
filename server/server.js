@@ -49,14 +49,22 @@ let jokes = [
 
 
 //#region ⬇⬇ All GET/POST functions below: 
-// ⬇ GET /jokes renderDom function below: 
+// ⬇ GET /jokes function below: 
 app.get('/jokes', ( req, res ) => {
   console.log( 'Server Log: Got to /jokes GET' );
   // ⬇ Sending jokes array in GET response: 
   res.send( jokes );
 }); // End GET /jokes. 
-// ⬆ GET /jokes renderDom function above.
+// ⬆ GET /jokes function above.
 
+// ⬇ POST /jokes function below: 
+app.post('/jokes', ( req, res ) => {
+  console.log('Server Log: Got to /jokes POST');
+  // ⬇ Adding user's object input to end of jokes array:
+  jokes.push( req.body );
+  // ⬇ sendStatus 'Created' below: 
+  res.sendStatus( 201 );
+}); // End POST /jokes. 
 
 
 //#endregion ⬆⬆ All GET/POST functions above. 
