@@ -1,11 +1,21 @@
+//#region ⬇⬇ All server setup and global variables below:
+//#region ⬇ Server setup below:
 const express = require( 'express' );
 const app = express();
 const bodyParser = require( 'body-parser' );
+const { response } = require('express');
 const PORT = 5000;
-
-// use bodyParser.urlencoded throughout the app with this:
+// ⬇ use bodyParser.urlencoded throughout the app with this:
 app.use(bodyParser.urlencoded({ extended: true }));
+// ⬇serve back static files:
+app.use(express.static('server/public'));
+// ⬇ Display which port the server is running on:
+app.listen(PORT, () => {
+  console.log('server running on: ', PORT);
+}); // end spin up server
+//#endregion ⬆ Server setup above. 
 
+//#region ⬇ Global variables below:
 let jokes = [
   {
     whoseJoke: "Danny",
@@ -33,10 +43,22 @@ let jokes = [
     punchLine: "It was a shih tzu."
   }
 ];
+//#endregion ⬆ Global variables above. 
+//#endregion ⬆⬆ All server setup and global variables above. 
 
-// serve back static files
-app.use(express.static('server/public'));
 
-app.listen(PORT, () => {
-  console.log('server running on: ', PORT);
-}); // end spin up server
+
+//#region ⬇⬇ All GET/POST functions below: 
+// ⬇ GET /jokes renderDom function below: 
+app.get('/jokes', ( req, req ) => {
+  console.log( 'Server Log: Got to /jokes GET' );
+  // ⬇ Sending jokes array in GET response: 
+  res.send( jokes );
+}); // End GET /jokes. 
+// ⬆ GET /jokes renderDom function above.
+
+
+
+//#endregion ⬆⬆ All GET/POST functions above. 
+
+
