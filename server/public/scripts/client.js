@@ -1,4 +1,3 @@
-//#region ⬇⬇ All document setup and global variables below:
 //#region ⬇ Document setup below:
 console.log( 'Client Log: JavaScript loaded!' );
 $( document ).ready( onReady );
@@ -11,9 +10,6 @@ function onReady() {
 } // End onReady function. 
 //#endregion ⬆ Document setup above.
 
-//#region ⬇ Global variables below:
-//#endregion ⬆ Global variables above. 
-//#endregion ⬆⬆ All server setup and global variables above. 
 
 //#region ⬇⬇ GET/POST functions below: 
 // ⬇ GET /jokes renderDom function below: 
@@ -64,6 +60,8 @@ function clickedAddJoke() {
   }).catch( function( err ) {
     console.log( 'ERROR: in POST /jokes clickedAddJoke(), error is:', err );
   }); // End Ajax POST .then & .catch.
+  // ⬇ Emptying out inputs on click:
+  $('.userInputs').val('');
 } // End clickedAddJoke function. 
 // ⬆ POST /jokes clickedAddJoke function above.
 //#endregion ⬆⬆ GET/POST Functions above. 

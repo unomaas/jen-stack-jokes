@@ -47,7 +47,6 @@ let jokes = [
 //#endregion ⬆⬆ All server setup and global variables above. 
 
 
-
 //#region ⬇⬇ All GET/POST functions below: 
 // ⬇ GET /jokes function below: 
 app.get('/jokes', ( req, res ) => {
@@ -65,8 +64,7 @@ app.post('/jokes', ( req, res ) => {
   // ⬇ sendStatus 'Created' below: 
   res.sendStatus( 201 );
 }); // End POST /jokes. 
-
-
+// ⬆ POST /jokes function above.
 //#endregion ⬆⬆ All GET/POST functions above. 
 
 
